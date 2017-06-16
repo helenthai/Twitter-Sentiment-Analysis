@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- materialize for styling; looks a bit nicer than bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <!-- font-awesome for icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!--bootstrap for styling-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <style>
+     #searchBox { max-width: 30%; }
+     .fa-twitter { color:#55acee; }
+     table { width:auto; }
+     #searchButton {height: 28px;}
+    </style>
+
+</head>
+
+<body>    
+    <div class="container"> <!-- content -->
+        <h1><i class="fa fa-twitter"></i> Twitter Sentiment Analysis - Pie Chart</h1>
+        
+        <!-- more html content can go here; e.g., any data explanation -->
+
+        <div class="input-field">
+            <i class="fa fa-user fa-2x prefix" aria-hidden="true"></i>
+            <input name="query" placeholder="Twitter username..." id="searchBox">
+            <button id="searchButton" class="btn" onclick="myFunction();"><i class="fa fa-search" aria-label="search button"></i></button>
+            <p id="note" class="note"> (Type 'sample' for SAMPLE_TWEETS) </p>
+        </div>
+
+
+        <table class="bordered highlight">
+          <thead>
+            <tr>
+                <th>Emotion</th>
+                <th>% of Words</th>
+                <th>Example Words</th>
+                <th>Hashtags</th>
+            </tr>
+          </thead>
+          <tbody id="emotionsTable">
+            <!--Table content will go here-->
+          </tbody>
+        </table>
+
+        <div id="visContainer"> <!-- A container to hold the visualization -->
+        </div>
+
+        <!-- more html content can go here, e.g., further details -->
+        
+    </div>
+
+    <!-- JavaScript modules -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="data/sentiments_nrc.js"></script>
+    <script src="data/uw_ischool_sample.js"></script>
+    <script src="visualization.js"></script>
+</body>
+</html>
