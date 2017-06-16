@@ -1,8 +1,5 @@
 'use strict';  //treat silly mistakes as run-time errors
 
-
-
-/* Your script goes here */
 function myFunction() {
     var input = d3.select("input");
     var username = input.property("value");
